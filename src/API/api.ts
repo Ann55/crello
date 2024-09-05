@@ -1,4 +1,4 @@
-import { Card } from "../types/types";
+import { CardType } from "../types/types";
 
 enum Key {
   CARDS = "card",
@@ -26,17 +26,17 @@ const sleep = () => {
 };
 
 //look up ts generics for <>
-export const getCards = async (): Promise<Card[]> => {
+export const getCards = async (): Promise<CardType[]> => {
   await sleep();
   return get(Key.CARDS) ?? [];
 };
 
-export const setCards = async (cards: Card[]) => {
+export const setCards = async (cards: CardType[]) => {
   await sleep();
   set(Key.CARDS, cards);
 };
 
-export const addCard = async (card: Card) => {
+export const addCard = async (card: CardType) => {
   await sleep();
   const cards = get(Key.CARDS) ?? [];
   cards.push(card);

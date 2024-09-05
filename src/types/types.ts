@@ -4,9 +4,14 @@ export enum Status {
   DONE = "done",
 }
 
-export type Card = {
+export type CardType = {
   id: string;
   title: string;
   content: string;
   status: Status;
+};
+
+export type ColumnProps = {
+  title: Status;
+  cards: CardType[] | [];
 };
